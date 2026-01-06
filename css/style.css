@@ -1,0 +1,311 @@
+@font-face {
+    font-family: "JejuGothic";
+    src: url("../fonts/JejuGothic-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Jubson";
+    src: url("../fonts/Judson-Regular.ttf");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    width: 1300px;
+    margin: auto;
+    font-family: "JejuGothic";
+    display: flex;
+    background-color: #FFAB10;
+    /*padding-top: 13px;*/
+}
+.block_logo{
+    padding-top: 13px;
+}
+.menu{
+    margin-right: 30px;
+}
+
+.menu_list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.menu_list a{
+color: #000;
+text-decoration: none;
+padding: 12px;
+font-size: 20px;
+}
+
+.main{
+    width: 1300px;
+    margin: auto;
+}
+
+.brone{
+    height: 750px;
+    background-image: url("../img/4503599662800139_a29e.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.brone_block{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.brone_tekst{
+    color: #ffffff;
+    font-size: 30px;
+    font-family: "JejuGothic";
+    width: 70%;
+    text-align: center;
+}
+
+.brone_button{
+text-align: center;
+}
+
+.brone_button a{
+    padding: 7px 12px;
+    font-family: "JejuGothic";
+    color: #ffffff;
+    background-color: #FFAB10;
+    text-decoration: none;
+    margin-left: 85px;
+}
+
+.premiy_tekst{
+    text-align: center;  
+    font-size: 30px;
+    font-family: "Jubson";
+}
+
+.premiy_block_row{
+    display: flex;
+    width: 1100px;
+    margin: auto;
+    gap: 20px;
+}
+
+.premiy_block{
+    background-color: #FFAB10;
+    padding: 20px;
+    width: 320px;
+}
+
+.premiy_block img{
+    width: 60%;
+    
+}
+
+.premiy_block h3{
+    text-align: center;
+    font-family: "JejuGothic";
+    font-size: 30px;
+}
+
+.premiy_block p{
+    text-align: center;
+    font-family: "Jubson";
+    font-size: 30px;
+}
+
+.servis{
+    background-color: #ffab10be;
+}
+
+.servis_row{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+font-size: 23px;
+}
+
+.servis_row div{
+    width: 320px;
+    text-align: center;
+}
+
+.servis_row img{
+    width: 130px;
+}
+
+.servis h2{
+    text-align: center;
+    font-family: "Jubson";
+    font-size: 30px;
+}
+
+.nac_tekst{
+    text-align: center;
+    font-family: "Jubson";
+    font-size: 30px;
+}
+.nac_reg{
+    width: 650px;
+    background-color: #FFAB10;
+    height: 290px;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+}
+.nac_reg p{
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.part{
+    text-align: center;
+    font-size: 25px;
+}
+
+.part img{
+    margin: 10px;
+    width: 200px;
+}
+
+.footer{
+    width: 1301px;
+    margin: auto;
+    display: flex;
+    background-color: #B87700;
+    padding:10px
+}
+.footer_logo{
+width: 800px;
+}
+.podval{
+    width: 300px;
+}
+ul{
+    list-style: none;
+}
+.footer_logo ul{
+    display: flex;
+    gap: 10px;
+    margin-left: 62px;
+    margin-top: 0px;
+}
+
+.podval_tekst a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+
+.catalog_block_row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 1300px;
+
+}
+.catalog_block button{
+    background: #FFAB10;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.catalog_block button:hover{
+        background: #b98931;
+
+}
+.catalog_tekst{
+    text-align: center;  
+    font-size: 30px;
+    font-family: "Jubson";
+}
+
+.catalo_block_row{
+    display: flex;
+    width: 1100px;
+    margin: auto;
+    gap: 20px;
+}
+
+.catalo_block{
+    background-color: #FFAB10;
+    padding: 20px;
+    width: 320px;
+}
+
+.catalo_block img{
+    width: 60%;
+    
+}
+
+.catalo_block h3{
+    text-align: center;
+    font-family: "JejuGothic";
+    font-size: 30px;
+}
+
+.catalo_block p{
+    text-align: center;
+    font-family: "Jubson";
+    font-size: 30px;
+}
+
+
+
+.review_block_row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 1300px;
+
+}
+
+.review_tekst{
+    text-align: center;  
+    font-size: 30px;
+    font-family: "Jubson";
+}
+
+.review_block_row{
+    display: flex;
+    width: 1300px;
+    margin: auto;
+    gap: 20px;
+}
+
+.review_block{
+    background-color: #FFAB10;
+    padding: 20px;
+    width: 320px;
+}
+
+.review_block img{
+    width: 60%;
+    
+}
+
+.review_block h3{
+    text-align: center;
+    font-family: "JejuGothic";
+    font-size: 30px;
+}
+
+.review_block p{
+    text-align: center;
+    font-family: "Jubson";
+    font-size: 30px;
+}
