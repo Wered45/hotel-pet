@@ -1,16 +1,16 @@
 <div>
 <div class="footer">
     <div class="footer_logo">
-      <img src="img/кот подвал.png" alt="">
+      <img src="/img/кот подвал.png" alt="">
       <ul>
         <li>
-          <a href="#"><img src="img/fb1.png" alt=""></a>
+          <a href="#"><img src="/img/fb1.png" alt=""></a>
         </li>
         <li>
-          <a href="#"><img src="img/whatapp.png" alt=""></a>
+          <a href="#"><img src="/img/whatapp.png" alt=""></a>
         </li>
         <li>
-          <a href="#"><img src="img/vk.png" alt=""></a>
+          <a href="#"><img src="/img/vk.png" alt=""></a>
         </li>
       </ul>
     </div>    
@@ -28,7 +28,7 @@
         </li>
       </ul>
     </nav>
-</div>
+</div> 
 <div class="modal" id="brModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -69,7 +69,8 @@
               <option value="<?= $row['id_pet'] ?>" class="form-control"><?= $row['nickname'] ?></option>
             <? endwhile; ?>
           </select>
-
+           <label>Доп услуга:</label>
+          <input type="text" name="dop_usluga" class="form-control">
            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
           <button type="submit" name="br" class="btn btn-primary">Забронировать</button>
         </form>  
@@ -108,6 +109,39 @@
 
       </div>
     
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Изменить вольер</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <form method="post" >
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Новый номер вольера</label>
+          <input type="text" name="number_aviary" class="form-control" id="number" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Новая цена</label>
+          <input type="text" name="price" class="form-control" id="price" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Новый статус</label>
+          <input type="text" name="status" class="form-control" id="status" aria-describedby="emailHelp">
+        </div>
+        <input type="hidden" name="id_avi" id="id_avi">
+        <button type="submit" name="update" class="btn btn-primary">Изменить</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
     </div>
   </div>
 </div>

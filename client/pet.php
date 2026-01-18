@@ -8,9 +8,6 @@ if(!isset($_SESSION['id_user'])){
     }
 }
 
-$sql = 'select * from vid_pet';
-$vid_per = $conect->query($sql);
-
 $sql_pet = 'select * from pet where id_user = "'.$_SESSION['id_user'].'"';
 $pet = $conect->query($sql_pet);
 if (isset($_POST['pet'])) {
@@ -21,9 +18,9 @@ if (isset($_POST['pet'])) {
   $gender = $_POST['gender'];
   $age = $_POST['age'];
   $special_features = $_POST['special_features'];
-  $id_vid_pet = $_POST['id_vid_pet'];
+  $vid_pet = $_POST['vid_pet'];
 
-  $sql_pet = 'insert into pet (nickname, breed, size, weight, gender, age, special_features, id_vid_pet, id_user) values ("'.$nickname.'", "'.$breed.'", "'.$size.'", "'.$weight.'", "'.$gender.'", "'.$age.'", "'.$special_features.'", "'.$id_vid_pet.'", "'.$_SESSION['id_user'].'")';
+  $sql_pet = 'insert into pet (nickname, breed, size, weight, gender, age, special_features, vid_pet, id_user) values ("'.$nickname.'", "'.$breed.'", "'.$size.'", "'.$weight.'", "'.$gender.'", "'.$age.'", "'.$special_features.'", "'.$vid_pet.'", "'.$_SESSION['id_user'].'")';
   $conect->query($sql_pet);
   header('Location: /index.php');
   exit;
@@ -42,12 +39,10 @@ if (isset($_POST['delet'])) {
 
 <div class="border p-3 m-4  border-warning border-3 rounded-top">
 <form method="post">
-   <select class="form-select" name="id_vid_pet" aria-label="Default select example">
-    <option selected>Какой у кас питомец?</option>
-    <?php while($row = $vid_per->fetch_assoc()){?> 
-    <option value="<?=$row['id_vid_pet']?>"><?=$row['name_vid']?></option>
-    <?php }?>
-   </select>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Вид питомца</label>
+    <input required type="text" name="vid_pet" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Кличка питомца</label>
     <input required type="text" name="nickname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

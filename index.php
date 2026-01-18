@@ -8,15 +8,12 @@ $servises = $conect->query($sql);
     <div class="brone">
       <div class="brone_block">
         <div class="brone_tekst">
-          <p>Уютная и чистая гостиница  для вашего любимца</p>
-        </div>
-        <div class="brone_button">
-          <a href="#">Забронировать</a>
+          <p class="text-center">Уютная и чистая гостиница  для вашего любимца</p>
         </div>
       </div>
     </div>
 
-
+ 
 <div class="catalog ">
       <div class="catalog_tekst">
         <p>Наши номера</p>

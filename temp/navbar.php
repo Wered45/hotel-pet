@@ -31,19 +31,25 @@
           <a href="/admin/otcet_cass.php">Кассовый отчет</a>
         </li>';
         echo '<li>
-          <a href="/admin/otcet_cass.php">Доход гостиницы</a>
+          <a href="/admin/doxod.php">Доход гостиницы</a>
         </li>';
         echo '<li>
-          <a href="/admin/otcet_cass.php">Список выезжающих питомцев</a>
+          <a href="/admin/list_pet.php">Список выезжающих питомцев</a>
         </li>';
         echo '<li>
-          <a href="/admin/otcet_cass.php">Кассовый отчет</a>
+          <a href="/admin/information_comnat.php">Сведения о вольерах</a>
         </li>';
         echo '<li>
-          <a href="/admin/otcet_cass.php">Кассовый отчет</a>
+          <a href="/admin/reviuz.php">Просмотр отзыва</a>
         </li>';
         echo '<li>
-          <a href="/admin/otcet_cass.php">Кассовый отчет</a>
+          <a href="/admin/corect_volier.php">Корректировка вольеров</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/application.php">Заявки клиентов</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/new_servis.php">Добавить услуги</a>
         </li>';
         }
         ?>
@@ -60,7 +66,7 @@
       }
       ?>
     </nav>
-    <nav class="menu d-flex justify-content-between w-100 align-items-center">
+    <nav class="menu  justify-content-between w-100 align-items-center">
       <ul class="menu_list">
         <li>
           <a href="/index.php">Главная</a>
@@ -81,6 +87,27 @@
         if (isset($_SESSION['id_user']) && $_SESSION['id_role'] == 2) {
           echo '<li>
           <a href="/admin/otcet_cass.php">Кассовый отчет</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/doxod.php">Доход гостиницы</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/list_pet.php">Список выезжающих питомцев</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/information_comnat.php">Сведения о вольерах</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/reviuz.php">Просмотр отзыва</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/corect_volier.php">Корректировка вольеров</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/application.php">Заявки клиентов</a>
+        </li>';
+        echo '<li>
+          <a href="/admin/new_servis.php">Добавить услуги</a>
         </li>';
         }
         ?>

@@ -26,12 +26,14 @@ body{
 }
 .menu{
     margin-right: 30px;
+    display: flex;
 }
 
 .menu_list{
     list-style: none;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 15px;
 }

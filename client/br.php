@@ -9,6 +9,7 @@ $type_price = $_POST['type_price'];
 $id_avi = $_POST['id_avi'];
 $id_pet = $_POST['id_pet'];
 $id_user = $_SESSION['id_user'];
+$dop_usluga = $_POST['dop_usluga'];
 
 $sql = 'select * from servises where id_serv = '.$id_serv;
 $serv = $conect->query($sql)->fetch_array();
@@ -19,7 +20,7 @@ $datetime2 = new DateTime($date_end);
 $diff = $datetime1->diff($datetime2);
 $diff_days = $diff->days;
 $total_price = $price_serv * $diff_days;
-$sql = 'insert into Applications (date_start, date_end, type_price, id_avi, id_pet, id_user, status_appli,summ) values ("'.$date_start.'", "'.$date_end.'", "'.$type_price.'", "'.$id_avi.'", "'.$id_pet.'", "'.$id_user.'", "Забронировано", '.$total_price.')';
+$sql = 'insert into Applications (date_start, date_end, type_price, id_avi, id_pet, id_user, status_appli,summ, dop_sav) values ("'.$date_start.'", "'.$date_end.'", "'.$type_price.'", "'.$id_avi.'", "'.$id_pet.'", "'.$id_user.'", "Забронировано", '.$total_price.', "'.$dop_usluga.'")';
 $conect->query($sql);
 $id_app = $conect->insert_id;
 $sql = 'insert into table_servises_applic (col_serv, price, id_serv , id_appli) values (1, '.$total_price.', '.$id_serv.', '.$id_app.')';

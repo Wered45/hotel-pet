@@ -15,6 +15,9 @@ function order(id){
     $('#id_order').val(id);
 }
 
-function test(id){
-    
+function edit(number, price, statys, id_avi){
+    $('#number').val(number);
+    $('#price').val(price);
+    $('#status').val(statys);
+    $('#id_avi').val(id_avi);
 }

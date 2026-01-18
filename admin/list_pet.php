@@ -1,8 +1,6 @@
 <?php
 include '../temp/headr.php';
 if(!isset($_SESSION['id_user'])){
-    print_r($_SESSION);
-    exit;
     if($_SESSION['id_role'] != 2){
         header('Location: index.php');
         exit;
@@ -14,39 +12,32 @@ join users on Applications.id_user = users.id_user
 join table_aviary on Applications.id_avi = table_aviary.id_avi';
 $appl = $conect->query($sql);
 ?>
-<h3 class="text-center">Кассовый отчет</h3>
+<h3 class="text-center">Список выезжающих питомцев</h3>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">№ док</th>
       <th scope="col">Ф.И.О. постояльца</th>
-      <th scope="col">Тип отлаты</th>
-      <th scope="col">Сумма оплаты</th>
-      <th scope="col">№ вольера</th>
-      <th scope="col">Дата заезда</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Сумма оплата</th>
+      <th scope="col">№ вольеры</th>
+      <th scope="col">Дата сдачи</th>
       <th scope="col">Дата выезда</th>
     </tr>
   </thead>
   <tbody>
-    <?php $summ = 0; while($row = $appl->fetch_assoc()){
-      $summ += $row['summ']?>
+    <?php while($row = $appl->fetch_assoc()){?>
     <tr>
       <th scope="row"><?=$row['id_appli']?></th>
       <th scope="row"><?=$row['fio']?></th>
-      <th scope="row"><?=$row['type_price']?></th>
+      <th scope="row"><?=$row['phone']?></th>
       <th scope="row"><?=$row['summ']?></th>
       <th scope="row"><?=$row['number_aviary']?></th>
       <th scope="row"><?=$row['date_start']?></th>
       <th scope="row"><?=$row['date_end']?></th>
     </tr>
     <?php }?>
-    <tr>
-      <th></th>
-      <th>Итого:</th>
-      <th></th>
-      <th><?php echo $summ;?></th>
-    </tr>
   </tbody>
 </table>
 <?php

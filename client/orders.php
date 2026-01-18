@@ -9,12 +9,11 @@ if(!isset($_SESSION['id_user'])){
 }
 
 $sql_order = 'select * from Applications 
-join table_servises_applic on table_servises_applic.id_appli  = Applications.id_appli 
-join servises on servises.id_serv  = table_servises_applic.id_serv 
-join table_aviary on table_aviary.id_avi  = Applications.id_avi 
+left join table_servises_applic on table_servises_applic.id_appli  = Applications.id_appli 
+left join servises on servises.id_serv  = table_servises_applic.id_serv 
+left join table_aviary on table_aviary.id_avi  = Applications.id_avi
 where Applications.id_user = '.$_SESSION['id_user'].'
 ';
-
 if (isset($_POST['delet'])) {
   $id_appli = $_POST['id_appli'];
   $sql_delet = 'delete from table_servises_applic where id_appli = "'.$id_appli.'"';
@@ -81,7 +80,7 @@ if (isset($_POST['delet_reviews'])) {
       </th>
       <th scope="row"><form method="post">
       <input type="hidden" name="id_appli" value="<?=$row['id_appli']?>">
-      <button type="submit" name="delet" class="btn btn-danger">Отменить</button>
+      <button type="submit" name="delet" class="btn btn-danger">Отказаться</button>
       </form></th>
       </tr>
     <?php }?>

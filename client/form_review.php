@@ -7,6 +7,8 @@ $text_review = $_POST['text_review'];
 $mark = $_POST['mark'];
 
 $sql = 'insert into reviews (ochenka, reviews, id_appli) values ("'.$mark.'", "'.$text_review.'", "'.$id_appli.'")';
+echo $sql;
+
 $conect->query($sql);
 header('Location: /client/orders.php');
 exit;
