@@ -11,6 +11,8 @@ if(!isset($_SESSION['id_user'])){
 $sql = 'select * from Applications
 join table_aviary on Applications.id_avi = table_aviary.id_avi';
 $appli = $conect->query($sql);
+
+
 ?>
 <h3 class="text-center">Заявки клиентов</h3>
 

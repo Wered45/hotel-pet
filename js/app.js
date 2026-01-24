@@ -21,3 +21,23 @@ function edit(number, price, statys, id_avi){
     $('#status').val(statys);
     $('#id_avi').val(id_avi);
 }
+
+ 
+$(document).ready(function(){
+    $('#filter_main').change(function(){
+        var selectedValue = $(this).val();
+        $.ajax({
+            url: 'ajax_filter.php',
+            type: 'POST',
+            data: {
+                tip_ser: selectedValue
+            },
+            success: function(response){
+                $('.catalog_block_row').html(response);
+            },
+            error: function(){
+
+            }
+        })
+    });
+});

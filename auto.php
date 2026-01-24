@@ -16,8 +16,11 @@ if (isset($_POST['auto'])) {
         if ($user['id_role'] == 1) {
           header('Location: /client/pet.php');
           exit;
-        }else{
+        }elseif($user['id_role'] == 2){
           header('Location: /admin/otcet_cass.php');
+          exit;
+        }else{
+          header('Location: /doctor/inspection_pet.php');
           exit;
         }
       }else{
@@ -28,6 +31,7 @@ if (isset($_POST['auto'])) {
     }
 }
 ?>
+<p class="text-center p-3">Если вы не зарегистрированы перейти на <a href="reg.php">страницу регистрации</a><p>
 <div class="border p-3 m-4  border-warning border-3 rounded-top">
 <form method="post">
   <div class="mb-3">

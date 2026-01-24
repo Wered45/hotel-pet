@@ -15,8 +15,9 @@ if (isset($_POST['servises'])) {
     $opic = $_POST['opic'];
     $price_serv = $_POST['price_serv'];
     $img = $_POST['img'];
+    $tip_ser = $_POST['tip_ser'];
 
-    $sql = 'insert into servises (name_serv, opic, price_serv, img) values ("'.$name_serv.'", "'.$opic.'", "'.$price_serv.'", "'.$img.'")';
+    $sql = 'insert into servises (name_serv, opic, price_serv, img, tip_ser) values ("'.$name_serv.'", "'.$opic.'", "'.$price_serv.'", "'.$img.'", "'.$tip_ser.'")';
     $conect->query($sql);
     header('Location: /admin/new_servis.php');
     exit;
@@ -50,6 +51,13 @@ if (isset($_POST['delet'])) {
     <label for="exampleInputEmail1" class="form-label">Введите картинку услуги</label>
     <input type="text" name="img" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Введите тип животного</label>
+    <select class="form-select" name="tip_ser" aria-label="Default select example">
+      <option value="Кошек">Кошек</option>
+      <option value="Собак">Собак</option>
+    </select>
+  </div>
   <button type="submit" name="servises" class="btn btn-warning">Добавить</button>
 </form>
 </div>
@@ -59,6 +67,7 @@ if (isset($_POST['delet'])) {
       <th scope="col">Название услуги</th>
       <th scope="col">Описание услуги</th>
       <th scope="col">Цена за сутки услуги</th>
+      <th scope="col">Тип вольера</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -68,6 +77,7 @@ if (isset($_POST['delet'])) {
       <th scope="row"><?=$row['name_serv']?></th>
       <th scope="row"><?=$row['opic']?></th>
       <th scope="row"><?=$row['price_serv']?></th>
+      <th scope="row"><?=$row['tip_ser']?></th>
       <th scope="row"><form method="post">
       <input type="hidden" name="id_serv" value="<?=$row['id_serv']?>">
       <button type="submit" name="delet" class="btn btn-danger">Удалить</button>

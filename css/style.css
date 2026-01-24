@@ -8,9 +8,17 @@
     src: url("../fonts/Judson-Regular.ttf");
 }
 
+nav section footer{
+    display: block;
+}
+
 body{
     margin: 0;
     padding: 0;
+}
+
+section{
+    margin-top: 30px;
 }
 
 .header{

@@ -49,13 +49,16 @@
             <option value="наличка" class="form-control">наличка</option>
             <option value="картой" class="form-control">картой</option>
           </select>
-          <?php 
-          
+          <?php       
+          if(!isset($_SESSION['id_user'])){
+            $id_user = 0;
+          }else{
+            $id_user = $_SESSION['id_user'];
+          }
             $sql_1 = 'select * from table_aviary';
-            $sql_2 = 'select * from pet where id_user = '.$_SESSION['id_user'];
+            $sql_2 = 'select * from pet where id_user = '. $id_user;
             $q_1 = $conect->query($sql_1);
             $q_2 = $conect->query($sql_2);
-
           ?>
           <label>Вальеры:</label>
           <select name="id_avi" class="form-control">
@@ -131,10 +134,13 @@
           <label for="exampleInputEmail1" class="form-label">Новая цена</label>
           <input type="text" name="price" class="form-control" id="price" aria-describedby="emailHelp">
         </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Новый статус</label>
-          <input type="text" name="status" class="form-control" id="status" aria-describedby="emailHelp">
-        </div>
+        <select class="form-select" name="status" aria-label="Default select example">
+          <option selected>Новый статус</option>
+          <option value="Свободен">Свободен</option>
+          <option value="Занят">Занят</option>
+          <option value="На уборке">На уборке</option>
+          <option value="На ремонте">На ремонте</option>
+        </select>
         <input type="hidden" name="id_avi" id="id_avi">
         <button type="submit" name="update" class="btn btn-primary">Изменить</button>
       </form>
@@ -148,6 +154,7 @@
   <script src="/js/jquery-1.11.3.min.js"></script>
   <script src="/js/fm.revealator.jquery.min.js"></script>
 <script src="/js/app.js"></script>    
-<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

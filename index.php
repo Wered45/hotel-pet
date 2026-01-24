@@ -3,6 +3,9 @@ include 'temp/headr.php';
 
 $sql = 'select * from servises';
 $servises = $conect->query($sql);
+
+$sql_rewius = 'select * from reviews order by id_reviews desc limit 3';
+$rewuis = $conect->query($sql_rewius);
 ?>
   <div class="main">
     <div class="brone">
@@ -12,18 +15,28 @@ $servises = $conect->query($sql);
         </div>
       </div>
     </div>
-
- 
+<section id="nomer">
 <div class="catalog ">
       <div class="catalog_tekst">
         <p>Наши номера</p>
       </div>
+
+     <div class="mb-3">
+        <label for="exampleInputEmail1"  class="form-label">Введите тип животного</label>
+        <select class="form-select" name="tip_ser" id='filter_main' aria-label="Default select example">
+          <option value="">Все</option>
+          <option value="Кошек">Кошек</option>
+          <option value="Собак">Собак</option>
+        </select>
+      </div>
+
       <div class="catalog_block_row">
       <?php while($row = $servises->fetch_assoc()){?>
       <div class="catalog_block" style="width: 300px;">
           <h3><?=$row['name_serv']?></h3>
           <img src="<?=$row['img']?>" width="300px" alt="kart">
           <p><?=$row['opic']?></p>
+          <b>Тип: <?=$row['tip_ser']?></b>
           <p>
             <b>Цена</b> <?=$row['price_serv']?> руб. 
           </p>
@@ -37,7 +50,9 @@ $servises = $conect->query($sql);
         </div>
       <?php }?>
 </div>
-    <div class="servis mt-4">
+</section>
+<section id="serv">
+    <div class="servis mt-4 p-4">
       <div class="servis_tekst">
         <h2>Наши услуги</h2>
       </div>
@@ -68,6 +83,8 @@ $servises = $conect->query($sql);
           </div>
       </div>
     </div>
+</section>
+<section id="preg">
     <div class="premiy ">
       <div class="premiy_tekst">
         <p>Наши преимущества</p>
@@ -90,7 +107,8 @@ $servises = $conect->query($sql);
         </div>
       </div>
     </div>
-    <div class="nac ">
+</section>
+    <div class="nac mt-4 p-4 mb-4">
       <div class="nac_tekst">
         <h3>О нас</h3>
         <p>В нашей гостинице для животных все устроено так, чтобы Вашему питомцу было спокойно и комфортно. Просторные светлые номера позволяют животным чуствовать себя уютно, постояльцам отеля никогда не бывает у нас страшно или скучно. Наши котоняни уделяют общению с животными особое внимание. Мы гарантируем, что в течение дня Ваш любимец не будет знать отказа в ласке и ни в чем не будет нуждаться.</p>
@@ -106,6 +124,19 @@ $servises = $conect->query($sql);
       </div>
     </div>
   </div>
+<div class="nac mt-4 p-4 mb-4">
+<h3 class="text-center">Коментарии от наших постояльцев</h3>
+<div class="d-flex gap-4 justify-content-center mt-4">
+  <?php while($row = $rewuis->fetch_assoc()){?>
+  <div class="card " style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-text"><?=$row['reviews']?></p>
+      <p class="card-text">Оценка:<?=$row['ochenka']?></p>
+    </div>
+  </div>
+  <? }?>
+</div>
+</div>
 <?php
 include 'temp/footer.php';
 ?>

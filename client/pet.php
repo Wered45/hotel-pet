@@ -8,8 +8,7 @@ if(!isset($_SESSION['id_user'])){
     }
 }
 
-$sql_pet = 'select * from pet where id_user = "'.$_SESSION['id_user'].'"';
-$pet = $conect->query($sql_pet);
+
 if (isset($_POST['pet'])) {
   $nickname = $_POST['nickname'];
   $breed = $_POST['breed'];
@@ -35,7 +34,7 @@ if (isset($_POST['delet'])) {
   exit;
 }
 ?>
-<h3 class="text-center">Зарегистрировать питомца</h3>
+<h3 class="text-center p-4">Размешение питомца</h3>
 
 <div class="border p-3 m-4  border-warning border-3 rounded-top">
 <form method="post">
@@ -74,38 +73,6 @@ if (isset($_POST['delet'])) {
   <button type="submit" name="pet" class="btn btn-warning">Зарегистрировать</button>
 </form>
 </div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Кличка питомца</th>
-      <th scope="col">Порода</th>
-      <th scope="col">Размер</th>
-      <th scope="col">Вес</th>
-      <th scope="col">Пол</th>
-      <th scope="col">Возраст</th>
-      <th scope="col">Особые зарактеристики</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php while($row = $pet->fetch_assoc()){?>
-    <tr>
-      <th scope="row"><?=$row['nickname']?></th>
-      <th scope="row"><?=$row['breed']?></th>
-      <th scope="row"><?=$row['size']?></th>
-      <th scope="row"><?=$row['weight']?></th>
-      <th scope="row"><?=$row['gender']?></th>
-      <th scope="row"><?=$row['age']?></th>
-      <th scope="row"><?=$row['special_features']?></th>
-      <th scope="row"><form method="post">
-        <input type="hidden" name="id_pet" value="<?=$row['id_pet']?>">
-      <button type="submit" name="delet" class="btn btn-danger">Удалить</button>
-    </form></th>
-    </tr>
-    <?php }?>
-  </tbody>
-</table>
 <?php
 include '../temp/footer.php';
 ?>
